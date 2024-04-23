@@ -1,0 +1,56 @@
+{
+  "0": {
+    "url_adress": "https://spb.hh.ru/vacancy/96211808?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "от 150_000 до 180_000 ₽ на руки",
+    "company_name": "ООО Скайлайн",
+    "city": "Москва"
+  },
+  "1": {
+    "url_adress": "https://spb.hh.ru/vacancy/96210664?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "от 130_000 до 250_000 ₽ на руки",
+    "company_name": "30БИТ",
+    "city": "Москва"
+  },
+  "2": {
+    "url_adress": "https://spb.hh.ru/vacancy/94737993?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "Зарплата не указана",
+    "company_name": "EdgeЦентр",
+    "city": "Москва"
+  },
+  "3": {
+    "url_adress": "https://spb.hh.ru/vacancy/96189447?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "Зарплата не указана",
+    "company_name": "RUTUBE",
+    "city": "Москва"
+  },
+  "4": {
+    "url_adress": "https://spb.hh.ru/vacancy/96211305?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "Зарплата не указана",
+    "company_name": "ООО Диэсэл",
+    "city": "Санкт-Петербург"
+  },
+  "5": {
+    "url_adress": "https://spb.hh.ru/vacancy/72687504?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "от 150_000 до 200_000 ₽ на руки",
+    "company_name": "ООО Селфсек",
+    "city": "Москва"
+  },
+  "6": {
+    "url_adress": "https://spb.hh.ru/vacancy/95787634?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "от 150_000 ₽ на руки",
+    "company_name": "ООО Люди ПРО Групп",
+    "city": "Москва"
+  },
+  "7": {
+    "url_adress": "https://spb.hh.ru/vacancy/95916962?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "Зарплата не указана",
+    "company_name": "Веза",
+    "city": "Москва"
+  },
+  "8": {
+    "url_adress": "https://spb.hh.ru/vacancy/95525588?query=python&searchRid=1712257601747a4c39f452320f8f6a4e&hhtmFrom=vacancy_search_list",
+    "salary": "Зарплата не указана",
+    "company_name": "ООО Лаборатория 50",
+    "city": "Санкт-Петербург"
+  }
+}

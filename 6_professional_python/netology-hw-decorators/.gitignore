@@ -1,0 +1,10 @@
+__pycache__/
+.idea/
+.vscode/
+.env
+log_1.log
+log_2.log
+log_3.log
+past_hw.log
+main.log
+phonebook.csv
