@@ -1,22 +1,22 @@
-(() => {
-  let playing = true,
-    activeHole = 1;
+import { gameSettings, playing } from "./task.js";
 
+
+(() => {
   const stop = () => playing = true,
     getHole = index => document.getElementById(`hole${index}`),
     deactivateHole = index =>
-      getHole( index ).className = 'hole',
+      getHole(index).className = 'hole',
     activateHole = index =>
-      getHole( index ).className = 'hole hole_has-mole',
+      getHole(index).className = 'hole hole_has-mole',
     next = () => setTimeout(() => {
-      if ( !playing ) {
+      if (!playing) {
         return;
       }
-      deactivateHole( activeHole );
-      activeHole = Math.floor( 1 + Math.random() * 9 );
-      activateHole( activeHole );
+      deactivateHole(gameSettings.activeHole);
+      gameSettings.activeHole = Math.floor(1 + Math.random() * 9);
+      activateHole(gameSettings.activeHole);
       next();
-    }, 800 );
+    }, gameSettings.periodMinkChange);
 
   next();
 })();
