@@ -11,8 +11,8 @@ let deadCounter = 0,
 const gameSettings = {
   conditionToWin: 10,
   periodMinkChange: 700,
-  maxTimeoutToWin: 7700,
-  conditionToLose: 3,
+  maxTimeoutToWin: 8000,
+  conditionToLose: 5,
   activeHole: 1,
 };
 
@@ -33,6 +33,7 @@ function settingInitialData() {
 };
 
 function updateReadings() {
+  console.log(deadCounter, lostCounter);
   dead.textContent = deadCounter;
   lost.textContent = lostCounter;
 }
@@ -47,7 +48,6 @@ function startGame(message) {
 function stopGame() {
   clearTimeout(countdownTimer);
   playing = false;
-  updateReadings();
   if (deadCounter === gameSettings.conditionToWin) {
     alert('Вы победили...');
   } else if (isTimeout) {
@@ -64,11 +64,12 @@ allHoles.forEach((hole) => hole.addEventListener('click', () => {
   } else {
     lostCounter++;
   }
-  updateReadings();
+  console.log(lostCounter, deadCounter);
   checkStatusGame();
 }));
 
 function checkStatusGame() {
+  updateReadings();
   if (deadCounter === gameSettings.conditionToWin ||
       lostCounter === gameSettings.conditionToLose ||
       isTimeout) {
