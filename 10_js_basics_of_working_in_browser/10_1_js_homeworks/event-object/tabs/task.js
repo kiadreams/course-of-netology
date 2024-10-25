@@ -13,14 +13,14 @@ class Tab {
     });
   }
 
-  selectTab(number) {
+  selectTab(tabNumber) {
     this.tabs.forEach(tab => tab.classList.remove('tab_active'));
-    this.tabs[number].classList.add('tab_active');
+    this.tabs[tabNumber].classList.add('tab_active');
 
     this.tabContents.forEach(content => {
       content.classList.remove('tab__content_active');
     });
-    this.tabContents[number].classList.add('tab__content_active')
+    this.tabContents[tabNumber].classList.add('tab__content_active')
   }
 }
 
