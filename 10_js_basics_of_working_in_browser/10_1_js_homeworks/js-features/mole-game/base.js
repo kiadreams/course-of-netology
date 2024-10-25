@@ -1,4 +1,3 @@
-import { gameSettings, playing } from "./task.js";
 
 
 (() => {

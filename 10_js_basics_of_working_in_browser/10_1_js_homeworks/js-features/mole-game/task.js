@@ -1,4 +1,3 @@
-export { gameSettings, playing }
 
 
 let deadCounter = 0,
@@ -33,9 +32,9 @@ function settingInitialData() {
 };
 
 function updateReadings() {
-  console.log(deadCounter, lostCounter);
   dead.textContent = deadCounter;
   lost.textContent = lostCounter;
+  console.log(deadCounter);
 }
 
 function startGame(message) {
@@ -64,7 +63,6 @@ allHoles.forEach((hole) => hole.addEventListener('click', () => {
   } else {
     lostCounter++;
   }
-  console.log(lostCounter, deadCounter);
   checkStatusGame();
 }));
 
