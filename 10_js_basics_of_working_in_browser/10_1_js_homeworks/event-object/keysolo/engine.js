@@ -3,7 +3,7 @@ class GameEngine {
   constructor(gameMenu, mode) {
     this.gameMenu = gameMenu;
     this.mode = mode;
-    this.rounds = 1;
+    this.rounds = 5;
     this.allSymbols = 0;
     this.allTypedSymbols = 0;
     this.allMistakes = 0;
@@ -105,13 +105,13 @@ class GameEngine {
     } else if (score < 130) {
       return 'ХОРОШО';
     } else if (score < 150) {
-      return 'ОЧЕНЬ ХОРОШО';
+      return 'ОЧЕНЬ ХОРОШО!';
     } else if (score < 170) {
-      return 'ОТЛИЧНО';
+      return 'ОТЛИЧНО!!';
     } else if (score < 200) {
-      return 'ВЕЛИКОЛЕПНО';
+      return 'ВЕЛИКОЛЕПНО!!!';
     } else {
-      return 'ВАМ НЕТ РАВНЫХ';
+      return '!!!ВАМ НЕТ РАВНЫХ!!!';
     }
   }
 
