@@ -1,0 +1,68 @@
+.symbol {
+  font-size: 50px;
+}
+
+.card {
+  width: 100%;
+}
+
+.game {
+  text-align: center;
+}
+
+.status {
+  text-align: center;
+}
+
+.phrase {
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: gray;
+}
+
+.symbol_correct {
+  color: green;
+}
+
+.current {
+  color: black;
+}
+
+.symbol_wrong {
+  color: red;
+}
+
+.word_incorrect {
+  background: red;
+  color: #fff;
+}
+
+.box_button {
+  display: none;
+  text-align: center;
+}
+
+.butt__start {
+  margin: auto;
+}
+
+.game_title {
+  text-align: center;
+}
+
+.modes {
+  text-align: center;
+}
+
+.results {
+  text-align: center;
+}
+
+.statistics {
+  text-align: left;
+}
+
+.hide_block {
+  display: none;
+}

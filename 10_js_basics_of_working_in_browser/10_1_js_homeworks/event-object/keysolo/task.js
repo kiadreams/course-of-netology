@@ -17,7 +17,8 @@ class Game {
   }
 
   registerEvents() {
-    document.addEventListener('keydown', (event) => {
+    this.container.setAttribute('tabindex', '1');
+    this.container.addEventListener('keyup', (event) => {
       if (event.key === this.currentSymbol.textContent) {
         this.success();
       } else {
@@ -44,7 +45,7 @@ class Game {
   }
 
   fail() {
-    if (++this.lossElement.textContent === 3) {
+    if (++this.lossElement.textContent === 5) {
       alert('Вы проиграли!');
       this.reset();
     }
@@ -56,6 +57,8 @@ class Game {
 
     this.renderWord(word);
   }
+
+  
 
   getWord() {
     const words = [
