@@ -3,7 +3,7 @@ class GameEngine {
   constructor(gameMenu, mode) {
     this.gameMenu = gameMenu;
     this.mode = mode;
-    this.rounds = 5;
+    this.rounds = 1;
     this.allSymbols = 0;
     this.allTypedSymbols = 0;
     this.allMistakes = 0;
@@ -83,7 +83,7 @@ class GameEngine {
     if (this.allTime) {
       speed = Math.round(60 / this.allTime * this.allTypedSymbols);
     }
-    let errorRate = 1 - this.allMistakes / correctSymbols;
+    let errorRate = 1 - Math.pow(this.allMistakes, 2) / correctSymbols;
     errorRate = errorRate < 0 ? 0 : errorRate;
     const results = {
       typedSymbols: this.allTypedSymbols,

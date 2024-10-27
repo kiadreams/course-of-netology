@@ -18,6 +18,7 @@ class Game {
 
   registerEvents() {
     this.container.setAttribute('tabindex', '1');
+    this.container.focus();
     this.container.addEventListener('keyup', (event) => {
       if (event.key === this.currentSymbol.textContent) {
         this.success();
