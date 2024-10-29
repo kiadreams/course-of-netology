@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  background-color: white;
+}
+
+header {
+  height: 449px;
+  /* background-color: #666666; */
+  background: url(../images/banner-bg.jpg) center/cover no-repeat;
+  position: relative;
+  padding-top: 44px;
+  z-index: 0;
+}
+
+header::after {
+  content: "";
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.6;
+}
+
+nav {
+  margin-left: 57.5%;
+  margin-bottom: 141px;
+}
+
+nav a {
+  margin-right: 33px;
+  color: white;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  border-bottom: 1px solid #d9d9d9;
+  padding-bottom: 2px;
+}
+
+nav a:last-child {
+  margin-right: 0;
+}
+
+h1 {
+  height: 107px;
+  width: 678px;
+  text-align: center;
+  color: white;
+  margin: 0 auto;
+  font-size: 45px;
+  line-height: normal;
+}
+
+.logo {
+  position: absolute;
+  left: 15%;
+  top: 6%;
+  height: 41px;
+  width: 179px;
+  background-image: url(../icons/noemi-logo.svg);
+}
+
+.trends {
+  box-sizing: border-box;
+  height: 123px;
+  padding-top: 63px;
+  position: relative;
+}
+
+.trends__title {
+  text-align: center;
+  margin: 0;
+  font-size: 20px;
+}
+
+.trends::after {
+  content: "";
+  position: absolute;
+  background-color: #e1d9bd;
+  height: 3px;
+  width: 68px;
+  bottom: 28px;
+  left: 50%;
+  margin-left: -34px;
+}
