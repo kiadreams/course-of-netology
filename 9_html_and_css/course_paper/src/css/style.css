@@ -1,18 +1,37 @@
+@font-face {
+  font-family: "Open Sans";
+  src:
+    local("Open Sans Regular"),
+    local("OpenSans-Regular"),
+    url(../fonts/OpenSans-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src:
+    local("Open Sans Bold"),
+    local("OpenSans-Bold"),
+    url(../fonts/OpenSans-Bold.ttf);
+  font-weight: bold;
+}
+
+
 body {
   margin: 0;
   background-color: white;
 }
 
+
 header {
-  height: 449px;
-  /* background-color: #666666; */
-  background: url(../images/banner-bg.jpg) center/cover no-repeat;
+  height: 27.1vmax;
+  box-sizing: border-box;
+  background: url(../images/banner-bg.jpg) top/cover no-repeat;
   position: relative;
-  padding-top: 44px;
-  z-index: 0;
+  padding-top: 2.77%;
 }
 
-header::after {
+header::before {
   content: "";
   background-color: black;
   position: absolute;
@@ -20,70 +39,121 @@ header::after {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: -1;
   opacity: 0.6;
 }
 
-nav {
+
+.main-menu {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  /* height: 8.49vmax; */
+  height: 7.95vmax;
   margin-left: 57.5%;
-  margin-bottom: 141px;
 }
 
-nav a {
-  margin-right: 33px;
+.main-menu__item {
+  margin-right: 2.11vmax;
   color: white;
-  font-size: 13px;
+  font-family: "Open Sans";
+  font-weight: normal;
+  font-size: 0.783vmax;
+  text-transform: uppercase;
   text-decoration: none;
 }
 
-nav a:hover {
-  border-bottom: 1px solid #d9d9d9;
-  padding-bottom: 2px;
-}
-
-nav a:last-child {
+.main-menu__item:last-child {
   margin-right: 0;
 }
 
+.main-menu__item:hover {
+  padding-bottom: 2px;
+  text-decoration-line: underline;
+  text-decoration-thickness: 0.06vmax;
+  font-weight: bold;
+}
+
 h1 {
-  height: 107px;
-  width: 678px;
-  text-align: center;
-  color: white;
+  margin: 0;
+  /* max-width: 690px; */
+  width: 41.5%;
+  position: relative;
+  z-index: 2;
   margin: 0 auto;
-  font-size: 45px;
-  line-height: normal;
+
+  color: white;
+  font-size: 2.71vmax;
+  /* font-size: clamp(0.1vmax, 2.71vmax, 45px); */
+  font-family: "Open Sans", sans-serif;
+  text-align: center;
+  line-height: 4.51vmax;
+  /* line-height: clamp(0.1vmax, 4.51vmax, 75px); */
+  text-transform: uppercase;
 }
 
 .logo {
   position: absolute;
   left: 15%;
-  top: 6%;
-  height: 41px;
-  width: 179px;
+  top: 1.74vmax;
+  height: 2.47vmax;
+  width: 10.78vmax;
   background-image: url(../icons/noemi-logo.svg);
+  z-index: 2;
 }
 
+/* .content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 3.55vmax;
+} */
+
 .trends {
-  box-sizing: border-box;
-  height: 123px;
-  padding-top: 63px;
-  position: relative;
+  height: 7.41vmax;
+  padding-top: 3.55vmax;
 }
 
 .trends__title {
-  text-align: center;
   margin: 0;
-  font-size: 20px;
+  margin-bottom: 2.47vmax;
+  text-align: center;
+
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.2vmax;
+  position: relative;
+  text-transform: uppercase;
 }
 
-.trends::after {
+.trends__title::after {
   content: "";
   position: absolute;
   background-color: #e1d9bd;
-  height: 3px;
-  width: 68px;
-  bottom: 28px;
-  left: 50%;
-  margin-left: -34px;
+  height: 0.181vmax;
+  width: 4.1vmax;
+  bottom: -0.6vmax;
+  left: calc(50% - 4.1vmax/2);
 }
+
+.trends__box {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trends__item {
+  display: flex;
+  height: 19.27vmax;
+  width: 24.7vmax;
+  background: black;
+  margin-right: 0.24vmax;
+}
+
+.trends__item:last-child {
+  margin: 0;
+}
+
+.item_image {
+  opacity: 0.6;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+

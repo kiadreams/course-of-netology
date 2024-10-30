@@ -9,26 +9,38 @@
 </head>
 
 <body>
-  <header>
+  <header class="header">
     <div class="logo"></div>
-    <nav>
-      <a href="#">ГЛАВНАЯ</a>
-      <a href="#">ПОСТЫ</a>
-      <a href="#">СТАТЬИ</a>
-      <a href="#">ТЕМЫ</a>
-      <a href="#">ТЭГИ</a>
-      <a href="#">КОНТАКТЫ</a>
+    <nav class="main-menu">
+      <a class="main-menu__item" href="#">главная</a>
+      <a class="main-menu__item" href="#">посты</a>
+      <a class="main-menu__item" href="#">статьи</a>
+      <a class="main-menu__item" href="#">темы</a>
+      <a class="main-menu__item" href="#">теги</a>
+      <a class="main-menu__item" href="#">контакты</a>
     </nav>
-    <h1>БЛОГ О ТВОРЧЕСТВЕ, СПОРТЕ, И ОБРАЗЕ ЖИЗНИ</h1>
+    <h1>блог о творчестве, спорте, и образе жизни</h1>
   </header>
-  <main>
+  <main class="content">
     <section class="trends">
-      <h2 class="trends__title">СЕЙЧАС В ТРЕНДЕ</h2>
+      <h2 class="trends__title">сейчас в тренде</h2>
       <div class="trends__box">
-        <article class="trend"></article>
-        <article class="trend"></article>
-        <article class="trend"></article>
-        <article class="trend"></article>
+        <div class="trends__item">
+          <img class="item_image" src="./images/trend1.jpg" alt="">
+          <div class="item__content"></div>
+        </div>
+        <div class="trends__item">
+          <img class="item_image" src="./images/trend2.jpg" alt="">
+          <div class="item__content"></div>
+        </div>
+        <div class="trends__item">
+          <img class="item_image" src="./images/trend3.jpg" alt="">
+          <div class="item__content"></div>
+        </div>
+        <div class="trends__item">
+          <img class="item_image" src="./images/trend4.jpg" alt="">
+          <div class="item__content"></div>
+        </div>
       </div>
     </section>
     <section class="articles">
@@ -53,15 +65,12 @@
         <div></div>
       </article>
     </section>
-    <aside>
-
-    </aside>
+    <aside></aside>
     <section class="products">
       <div class="products__product"></div>
       <div class="products__product"></div>
       <div class="products__product"></div>
     </section>
-
   </main>
   <footer></footer>
 </body>
