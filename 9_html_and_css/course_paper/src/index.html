@@ -19,7 +19,7 @@
       <a class="main-menu__item" href="#0">теги</a>
       <a class="main-menu__item" href="#0">контакты</a>
     </nav>
-    <h1>блог о творчестве, спорте, и образе жизни</h1>
+    <h1 class="header-title">блог о творчестве, спорте, и образе жизни</h1>
   </header>
   <main class="content">
     <section class="trends">
@@ -27,19 +27,44 @@
       <div class="trends__box">
         <div class="trends__item">
           <img class="trend__image" src="./images/trend1.jpg" alt="">
-          <div class="trend__content"></div>
+          <div class="trend__content">
+            <div class="trend__tags style-tags">
+              <p class="trend__tag">lifestyle</p>
+              <p class="trend__tag">interior</p>
+            </div>
+            <h3 class="trend__title">cейчас в тренде: сад<br>
+              на подоконнике</h3>
+          </div>
         </div>
         <div class="trends__item">
           <img class="trend__image" src="./images/trend2.jpg" alt="">
-          <div class="trend__content"></div>
+          <div class="trend__content">
+            <div class="trend__tags style-tags">
+              <p class="trend__tag">food</p>
+            </div>
+            <h3 class="trend__title">сыры на красивых
+              картинках из интернета: какие они на вкус?</h3>
+          </div>
         </div>
         <div class="trends__item">
           <img class="trend__image" src="./images/trend3.jpg" alt="">
-          <div class="trend__content"></div>
+          <div class="trend__content">
+            <div class="trend__tags style-tags">
+              <p class="trend__tag">lifestyle</p>
+              <p class="trend__tag">travel</p>
+            </div>
+            <h3 class="trend__title">собираемся в первый поход в горы</h3>
+          </div>
         </div>
         <div class="trends__item">
           <img class="trend__image" src="./images/trend4.jpg" alt="">
-          <div class="trend__content"></div>
+          <div class="trend__content">
+            <div class="trend__tags style-tags">
+              <p class="trend__tag">food</p>
+              <p class="trend__tag">health</p>
+            </div>
+            <h3 class="trend__title">сейчас в тренде: сколько витамина с в лимонах?</h3>
+          </div>
         </div>
       </div>
     </section>
@@ -50,21 +75,21 @@
             <img class="post__image" src="images/last-post1.jpg" alt="">
             <div class="post__content">
               <header class="post__headline">
-                <div class="post__tags">
-                  <p class="post__tag">travel</p>
-                  <p class="post__tag">health</p>
+                <div class="post__tags style-tags">
+                  <span class="post__tag">travel</span>
+                  <!-- <p class="post__tag">health</p> -->
                 </div>
                 <h3 class="post__title">10 мест, ради которых стоит
                   проснуться на рассвете</h3>
                 <div class="post__remark">
                   <time class="post__date" datetime="">10 июня 2019</time>
-                  <address class="post__author">Неизвестный автор</address>
+                  <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
               <div class="post__text-content">
                 <p>Итак, вы в Питере. Раннее утро. Лед с рек и каналов уже ушел, запущены фонтаны города… Музеи еще
                   закрыты. Что
-                  посмотреть?lor</p>
+                  посмотреть?</p>
               </div>
             </div>
           </article>
@@ -72,7 +97,7 @@
             <img class="post__image" src="images/last-post2.jpg" alt="">
             <div class="post__content">
               <header class="post__headline">
-                <div class="post__tags">
+                <div class="post__tags style-tags">
                   <p class="post__tag">health</p>
                   <p class="post__tag">lifestyle</p>
                 </div>
@@ -81,7 +106,7 @@
                 </h3>
                 <div class="post__remark">
                   <time class="post__date" datetime="">10 июня 2019</time>
-                  <address class="post__author">Неизвестный автор</address>
+                  <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
               <div class="post__text-content">
@@ -95,14 +120,14 @@
             <img class="post__image" src="images/last-post3.jpg" alt="">
             <div class="post__content">
               <header class="post__headline">
-                <div class="post__tags">
+                <div class="post__tags  style-tags">
                   <p class="post__tag">music</p>
                 </div>
                 <h3 class="post__title">Лучшие музыкальные
                   фестивали этого лета</h3>
                 <div class="post__remark">
                   <time class="post__date" datetime="">10 июня 2019</time>
-                  <address class="post__author">Неизвестный автор</address>
+                  <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
               <div class="post__text-content">
@@ -115,7 +140,7 @@
             <img class="post__image" src="images/last-post4.jpg" alt="">
             <div class="post__content">
               <header class="post__headline">
-                <div class="post__tags">
+                <div class="post__tags style-tags">
                   <p class="post__tag">lifestyle</p>
                   <p class="post__tag">food</p>
                 </div>
@@ -123,7 +148,7 @@
                   кулинарии</h3>
                 <div class="post__remark">
                   <time class="post__date" datetime="">10 июня 2019</time>
-                  <address class="post__author">Неизвестный автор</address>
+                  <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
               <div class="post__text-content">
@@ -136,7 +161,7 @@
             <img class="post__image" src="images/last-post5.jpg" alt="">
             <div class="post__content">
               <header class="post__headline">
-                <div class="post__tags">
+                <div class="post__tags style-tags">
                   <p class="post__tag">lifestyle</p>
                   <p class="post__tag">interior</p>
                   <p class="post__tag">art</p>
@@ -145,7 +170,7 @@
                   подушках для интерьера</h3>
                 <div class="post__remark">
                   <time class="post__date" datetime="">10 июня 2019</time>
-                  <address class="post__author">Неизвестный автор</address>
+                  <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
               <div class="post__text-content">
@@ -157,7 +182,8 @@
           </article>
         </div>
         <aside class="sidebar">
-          <p class="sidebar-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi voluptates tenetur est provident harum vitae
+          <p class="sidebar-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi voluptates tenetur
+            est provident harum vitae
             magni natus pariatur dignissimos tempore repudiandae a quia iure voluptatibus veniam architecto aliquam,
             voluptas libero.
           </p>
@@ -168,15 +194,63 @@
         <div class="products__box">
           <div class="products__item">
             <img class="product__image" src="./images/shop-item-desk1.jpg" alt="">
-            <div class="product__content"></div>
+            <div class="product__content">
+              <h3 class="product__title">подушки на диван</h3>
+              <div class="product__text-content">
+                <p>Набор из двух подушек с модными принтами. Видео о создании <a href="#0">здесь</a>.</p>
+              </div>
+              <div class="product__price-box">
+                <div class="prices">
+                  <b class="old-price">
+                    1000 <span class="currency-ruble">Р</span>
+                  </b>
+                  <strong class="new-price">
+                    800 <span class="currency-ruble">Р</span>
+                  </strong>
+                </div>
+                <a class="store-link" href="#0">в магазин</a>
+              </div>
+            </div>
           </div>
           <div class="products__item">
             <img class="product__image" src="./images/shop-item-desk2.jpg" alt="">
-            <div class="product__content"></div>
+            <div class="product__content">
+              <h3 class="product__title">кукла «зайчик»</h3>
+              <div class="product__text-content">
+                <p>Интерьерная рукодельная кукла «Зайчик», созданию которой посвящена <a href="#0">весенняя серия постов</a> в блоге и несколько подкастов.</p>
+              </div>
+              <div class="product__price-box">
+                <div class="prices">
+                  <b class="old-price">
+                    1000 <span class="currency-ruble">Р</span>
+                  </b>
+                  <strong class="new-price">
+                    3500 <span class="currency-ruble">Р</span>
+                  </strong>
+                </div>
+                <a class="store-link" href="#0">в магазин</a>
+              </div>
+            </div>
           </div>
           <div class="products__item">
             <img class="product__image" src="./images/shop-item-desk3.jpg" alt="">
-            <div class="product__content"></div>
+            <div class="product__content">
+              <h3 class="product__title">шестиугольная рамка</h3>
+              <div class="product__text-content">
+                <p>Необычная рамка для украшения дома из видео <a href="#0">«Как сделать рамку из подручных средств за 30 минут»</a></p>
+              </div>
+              <div class="product__price-box">
+                <div class="prices">
+                  <b class="old-price">
+                    500 <span class="currency-ruble"> Р</span>
+                  </b>
+                  <strong class="new-price">
+                    400 <span class="currency-ruble">Р</span>
+                  </strong>
+                </div>
+                <a class="store-link" href="#0">в магазин</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
