@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
   <meta charset="UTF-8">
@@ -12,12 +12,26 @@
   <header class="header">
     <div class="logo"></div>
     <nav class="main-menu">
-      <a class="main-menu__item" href="#0">главная</a>
-      <a class="main-menu__item" href="#0">посты</a>
-      <a class="main-menu__item" href="#0">статьи</a>
-      <a class="main-menu__item" href="#0">темы</a>
-      <a class="main-menu__item" href="#0">теги</a>
-      <a class="main-menu__item" href="#0">контакты</a>
+      <ul class="main-menu__list">
+        <li class="main-menu__item">
+          <a class="main-menu__title" href="#">главная</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__title" href="#">посты</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__title" href="#">статьи</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__title" href="#">теги</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__title" href="#">темы</a>
+        </li>
+        <li class="main-menu__item">
+          <a class="main-menu__title" href="#">контакты</a>
+        </li>
+      </ul>
     </nav>
     <h1 class="header-title">блог о творчестве, спорте, и образе жизни</h1>
   </header>
@@ -76,13 +90,13 @@
             <div class="post__content">
               <header class="post__headline">
                 <div class="post__tags style-tags">
-                  <span class="post__tag">travel</span>
-                  <!-- <p class="post__tag">health</p> -->
+                  <div class="post__tag">travel</div>
+                  <div class="post__tag">health</div>
                 </div>
                 <h3 class="post__title">10 мест, ради которых стоит
                   проснуться на рассвете</h3>
                 <div class="post__remark">
-                  <time class="post__date" datetime="">10 июня 2019</time>
+                  <time class="post__date" datetime="2019-06-10">10 июня 2019</time>
                   <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
@@ -98,14 +112,14 @@
             <div class="post__content">
               <header class="post__headline">
                 <div class="post__tags style-tags">
-                  <p class="post__tag">health</p>
-                  <p class="post__tag">lifestyle</p>
+                  <div class="post__tag">health</div>
+                  <div class="post__tag">lifestyle</div>
                 </div>
                 <h3 class="post__title">
                   йога для начинающих в домашних условиях
                 </h3>
                 <div class="post__remark">
-                  <time class="post__date" datetime="">10 июня 2019</time>
+                  <time class="post__date" datetime="2019-06-10">10 июня 2019</time>
                   <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
@@ -121,12 +135,12 @@
             <div class="post__content">
               <header class="post__headline">
                 <div class="post__tags  style-tags">
-                  <p class="post__tag">music</p>
+                  <div class="post__tag">music</div>
                 </div>
                 <h3 class="post__title">Лучшие музыкальные
                   фестивали этого лета</h3>
                 <div class="post__remark">
-                  <time class="post__date" datetime="">10 июня 2019</time>
+                  <time class="post__date" datetime="2019-06-10">10 июня 2019</time>
                   <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
@@ -141,13 +155,13 @@
             <div class="post__content">
               <header class="post__headline">
                 <div class="post__tags style-tags">
-                  <p class="post__tag">lifestyle</p>
-                  <p class="post__tag">food</p>
+                  <div class="post__tag">lifestyle</div>
+                  <div class="post__tag">food</div>
                 </div>
                 <h3 class="post__title">Наукоёмкий подход к
                   кулинарии</h3>
                 <div class="post__remark">
-                  <time class="post__date" datetime="">10 июня 2019</time>
+                  <time class="post__date" datetime="2019-06-10">10 июня 2019</time>
                   <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
@@ -162,14 +176,14 @@
             <div class="post__content">
               <header class="post__headline">
                 <div class="post__tags style-tags">
-                  <p class="post__tag">lifestyle</p>
-                  <p class="post__tag">interior</p>
-                  <p class="post__tag">art</p>
+                  <div class="post__tag">lifestyle</div>
+                  <div class="post__tag">interior</div>
+                  <div class="post__tag">art</div>
                 </div>
                 <h3 class="post__title">делаем модные принты на
                   подушках для интерьера</h3>
                 <div class="post__remark">
-                  <time class="post__date" datetime="">10 июня 2019</time>
+                  <time class="post__date" datetime="2019-06-10">10 июня 2019</time>
                   <span class="post__author">Неизвестный автор</span>
                 </div>
               </header>
@@ -181,13 +195,99 @@
             </div>
           </article>
         </div>
+
+
+
         <aside class="sidebar">
-          <p class="sidebar-content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi voluptates tenetur
-            est provident harum vitae
-            magni natus pariatur dignissimos tempore repudiandae a quia iure voluptatibus veniam architecto aliquam,
-            voluptas libero.
-          </p>
+          <section class="sidebar-posts">
+            <h2 class="sidebar-section__title">новые посты</h2>
+            <div class="sidebar-posts__box">
+              <div class="sidebar-post">
+                <img class="sidebar-post__image" src="images/2.jpg" alt="">
+                <header class="sidebar-post__headline">
+                  <time class="post__date" datetime="2019-06-14">
+                    14 июня 2019
+                  </time>
+                  <h3>10 мест, ради которых стоит проснуться</h3>
+                </header>
+              </div>
+              <div class="sidebar-post">
+                <img class="sidebar-post__image" src="images/151.jpg" alt="">
+                <header class="sidebar-post__headline">
+                  <time class="post__date" datetime="2019-06-14">
+                    14 июня 2019
+                  </time>
+                  <h3>йога для домашних</h3>
+                </header>
+              </div>
+              <div class="sidebar-post">
+                <img class="sidebar-post__image" src="images/45.jpg" alt="">
+                <header class="sidebar-post__headline">
+                  <time class="post__date" datetime="2019-06-14">
+                    14 июня 2019
+                  </time>
+                  <h3>как мы превратили классное место в балкон</h3>
+                </header>
+              </div>
+              <div class="sidebar-post">
+                <img class="sidebar-post__image" src="images/501.jpg" alt="">
+                <header class="sidebar-post__headline">
+                  <time class="post__date" datetime="2019-06-14">
+                    14 июня 2019
+                  </time>
+                  <h3>кулинарный подход к науке</h3>
+                </header>
+              </div>
+              <div class="sidebar-post">
+                <img class="sidebar-post__image" src="images/7.jpg" alt="">
+                <header class="sidebar-post__headline">
+                  <time class="post__date" datetime="2019-06-14">
+                    14 июня 2019
+                  </time>
+                  <h3>лучшие прически для распущенных волос</h3>
+                </header>
+              </div>
+            </div>
+            <div class="sidebar-posts__search">
+              <input type="search" name="post-search" id="post-search" placeholder="Найти...">
+              <button type="button">""</button>
+            </div>
+          </section>
+          <section class="sidebar-mailing">
+            <h2 class="sidebar-section__title">рассылка</h2>
+            <div class="sidebar-mailing__box">
+              <input type="email" name="guest-mail" id="guest-mail" placeholder="Ваш email-адрес">
+              <button type="button">подписаться</button>
+            </div>
+          </section>
+          <section class="sidebar-tags">
+            <h2 class="sidebar-section__title">теги</h2>
+            <div class="sidebar-tags__box">
+              <strong class="sidebar-tag">fashion</strong>
+              <strong class="sidebar-tag">music</strong>
+              <strong class="sidebar-tag">lifestyle</strong>
+              <strong class="sidebar-tag">art</strong>
+              <strong class="sidebar-tag">interior</strong>
+              <strong class="sidebar-tag">travel</strong>
+              <strong class="sidebar-tag">food</strong>
+              <strong class="sidebar-tag">health</strong>
+            </div>
+          </section>
+          <section class="sidebar-categories">
+            <h2 class="sidebar-section__title">темы</h2>
+            <ul class="sidebar-categories__list">
+              <li class="sidebar-category">красота <span>12</span></li>
+              <li class="sidebar-category">здоровье <span>4</span></li>
+              <li class="sidebar-category">образ жизни <span>145</span></li>
+              <li class="sidebar-category">музыка <span>28</span></li>
+              <li class="sidebar-category">спорт <span>62</span></li>
+              <li class="sidebar-category">йога <span>8</span></li>
+            </ul>
+          </section>
         </aside>
+
+
+
       </div>
       <div class="products">
         <h2 class="content-section__title">наши изделия</h2>
@@ -201,14 +301,16 @@
               </div>
               <div class="product__price-box">
                 <div class="prices">
-                  <b class="old-price">
-                    1000 <span class="currency-ruble">Р</span>
-                  </b>
-                  <strong class="new-price">
-                    800 <span class="currency-ruble">Р</span>
-                  </strong>
+                  <div class="old-price">
+                    <b>1000 <span class="currency-ruble">Р</span></b>
+                  </div>
+                  <div class="new-price">
+                    <strong>800 <span class="currency-ruble">Р</span></strong>
+                  </div>
                 </div>
-                <a class="store-link" href="#0">в магазин</a>
+                <div class="store-button">
+                  <a class="store-button__link" href="#0">в магазин</a>
+                </div>
               </div>
             </div>
           </div>
@@ -217,18 +319,21 @@
             <div class="product__content">
               <h3 class="product__title">кукла «зайчик»</h3>
               <div class="product__text-content">
-                <p>Интерьерная рукодельная кукла «Зайчик», созданию которой посвящена <a href="#0">весенняя серия постов</a> в блоге и несколько подкастов.</p>
+                <p>Интерьерная рукодельная кукла «Зайчик», созданию которой посвящена <a href="#0">весенняя серия
+                    постов</a> в блоге и несколько подкастов.</p>
               </div>
               <div class="product__price-box">
                 <div class="prices">
-                  <b class="old-price">
-                    1000 <span class="currency-ruble">Р</span>
-                  </b>
-                  <strong class="new-price">
-                    3500 <span class="currency-ruble">Р</span>
-                  </strong>
+                  <div class="old-price hidden-element">
+                    <b>100<span class="currency-ruble">Р</span></b>
+                  </div>
+                  <div class="new-price">
+                    <strong>3500<span class="currency-ruble">Р</span></strong>
+                  </div>
                 </div>
-                <a class="store-link" href="#0">в магазин</a>
+                <div class="store-button">
+                  <a class="store-button__link" href="#0">в магазин</a>
+                </div>
               </div>
             </div>
           </div>
@@ -237,18 +342,21 @@
             <div class="product__content">
               <h3 class="product__title">шестиугольная рамка</h3>
               <div class="product__text-content">
-                <p>Необычная рамка для украшения дома из видео <a href="#0">«Как сделать рамку из подручных средств за 30 минут»</a></p>
+                <p>Необычная рамка для украшения дома из видео <a href="#0">«Как сделать рамку из подручных средств за
+                    30 минут»</a></p>
               </div>
               <div class="product__price-box">
                 <div class="prices">
-                  <b class="old-price">
-                    500 <span class="currency-ruble"> Р</span>
-                  </b>
-                  <strong class="new-price">
-                    400 <span class="currency-ruble">Р</span>
-                  </strong>
+                  <div class="old-price">
+                    <b>500 <span class="currency-ruble">Р</span></b>
+                  </div>
+                  <div class="new-price">
+                    <strong>400 <span class="currency-ruble">Р</span></strong>
+                  </div>
                 </div>
-                <a class="store-link" href="#0">в магазин</a>
+                <div class="store-button">
+                  <a class="store-button__link" href="#0">в магазин</a>
+                </div>
               </div>
             </div>
           </div>
