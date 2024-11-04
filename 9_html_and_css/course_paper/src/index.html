@@ -268,9 +268,9 @@
 
         <aside class="main_posts__sidebar">
           <section class="posts_sidebar__last-posts">
-            <h2 class="sidebar_new-posts__title sidebar-titles">
+            <h4 class="sidebar_last-posts__title sidebar-titles">
               новые посты
-            </h2>
+            </h4>
             <div class="sidebar_last-posts__box">
               <div class="sidebar_last-posts__item">
                 <img class="sidebar_last-post__image" src="images/2.jpg" alt="Девушка гуляет на берегу океана">
@@ -328,52 +328,54 @@
                 </header>
               </div>
             </div>
+            <div class="sidebar_last-posts__search ">
+              <input class="sidebar-interactive" type="search" name="post-search" id="post-search" placeholder="Найти...">
+              <button class="sidebar-interactive" type="button" id="button-search"></button>
+            </div>
+          </section>
 
-            <div class="sidebar_new-posts__search">
-              <input type="search" name="post-search" id="post-search" placeholder="Найти...">
-              <button type="button">""</button>
-            </div>
-          </section>
           <section class="posts_sidebar__mailing">
-            <h2 class="sidebar_mailing__title sidebar-titles">рассылка</h2>
+            <h4 class="sidebar_mailing__title sidebar-titles">рассылка</h4>
             <div class="sidebar_mailing__box">
-              <input type="email" name="guest-mail" id="guest-mail" placeholder="Ваш email-адрес">
-              <button type="button">подписаться</button>
+              <input class="sidebar-interactive" type="email" name="guest-mail" id="guest-mail" placeholder="Ваш email-адрес">
+              <button class="sidebar-interactive" type="button" id="button-mail">подписаться</button>
             </div>
           </section>
+
           <section class="posts_sidebar__tags">
-            <h2 class="sidebar_tags__title sidebar-titles">теги</h2>
+            <h4 class="sidebar_tags__title sidebar-titles">теги</h4>
             <ul class="sidebar_tags__box">
-              <strong class="sidebar-tag">fashion</strong>
-              <strong class="sidebar-tag">music</strong>
-              <strong class="sidebar-tag">lifestyle</strong>
-              <strong class="sidebar-tag">art</strong>
-              <strong class="sidebar-tag">interior</strong>
-              <strong class="sidebar-tag">travel</strong>
-              <strong class="sidebar-tag">food</strong>
-              <strong class="sidebar-tag">health</strong>
+              <li><strong class="sidebar_box__tag">fashion</strong></li>
+              <li><strong class="sidebar_box__tag">music</strong></li>
+              <li><strong class="sidebar_box__tag">lifestyle</strong></li>
+              <li><strong class="sidebar_box__tag">art</strong></li>
+              <li><strong class="sidebar_box__tag">interior</strong></li>
+              <li><strong class="sidebar_box__tag">travel</strong></li>
+              <li><strong class="sidebar_box__tag">food</strong></li>
+              <li><strong class="sidebar_box__tag">health</strong></li>
             </ul>
           </section>
+
           <section class="posts_sidebar__categories">
-            <h2 class="sidebar_categories__title sidebar-titles">темы</h2>
+            <h4 class="sidebar_categories__title sidebar-titles">темы</h4>
             <ul class="sidebar_categories__box">
               <li class="sidebar_categories__item">
-                красота <span>12</span>
+                красота <sup>12</sup>
               </li>
               <li class="sidebar_categories__item">
-                здоровье <span>4</span>
+                здоровье <sup>4</sup>
               </li>
               <li class="sidebar_categories__item">
-                образ жизни <span>145</span>
+                образ жизни <sup>145</sup>
               </li>
               <li class="sidebar_categories__item">
-                музыка <span>28</span>
+                музыка <sup>28</sup>
               </li>
               <li class="sidebar_categories__item">
-                спорт <span>62</span>
+                спорт <sup>62</sup>
               </li>
               <li class="sidebar_categories__item">
-                йога <span>8</span>
+                йога <sup>8</sup>
               </li>
             </ul>
           </section>

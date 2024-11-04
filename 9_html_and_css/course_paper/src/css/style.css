@@ -128,7 +128,7 @@ body {
   position: absolute;
   background-color: #e1d9bd;
   height: 0.15rem;
-  width: 3.4rem;
+  width: 3.3rem;
   bottom: -0.5rem;
   left: calc(50% - 3.4rem/2);
 }
@@ -309,16 +309,15 @@ body {
 
 
 .main_posts__sidebar {
-  width: 16.325vmax;
+  width: 23.16%;
 }
 
 .sidebar-titles {
   margin: 0;
-  margin-bottom: 2.47vmax;
   text-align: center;
 
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.2vmax;
+  line-height: 0.5rem;
+  font-size: 0.7rem;
   position: relative;
   text-transform: uppercase;
 }
@@ -327,15 +326,24 @@ body {
   content: "";
   position: absolute;
   background-color: #e1d9bd;
-  height: 0.181vmax;
-  width: 4.1vmax;
-  bottom: -0.84vmax;
-  left: calc(50% - 4.1vmax/2);
+  height: 0.15rem;
+  width: 3.3rem;
+  bottom: -0.7rem;
+  left: calc(50% - 3.4rem/2);
+}
+
+.posts_sidebar__last-posts {
+  margin-bottom: 3.1rem;
+}
+
+.sidebar_last-posts__title {
+  margin-bottom: 2.3rem;
 }
 
 .sidebar_last-posts__box {
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
 }
 
 .sidebar_last-posts__item {
@@ -343,7 +351,12 @@ body {
   margin-bottom: 1.1rem;
 }
 
+.sidebar_last-posts__item:last-child {
+  margin: 0;
+}
+
 .sidebar_last-post__image {
+  display: flex;
   height: 3.5rem;
   width: 3.5rem;
 }
@@ -351,7 +364,8 @@ body {
 .sidebar_last-post__headline {
   display: flex;
   flex-direction: column;
-  padding-left: 1rem;
+  width: 66.78%;
+  margin-left: auto;
 }
 
 .last-post_headline__title {
@@ -367,9 +381,189 @@ body {
 
   line-height: 0.5rem;
   color: #888888;
-  margin-right: 0.65rem;
   font-size: 0.6rem;
 }
+
+.sidebar-interactive {
+  box-sizing: border-box;
+  padding: 0;
+  border: 0;
+  height: 2.4rem;
+}
+
+.sidebar_last-posts__search {
+  display: flex;
+}
+
+#post-search {
+  display: flex;
+  width: 81.91%;
+}
+
+#post-search:focus {
+  outline: 0.05rem solid #b59f5b;
+}
+
+#post-search::placeholder {
+  font-size: 0.65rem;
+  color: black;
+  opacity: 0.54;
+  padding-left: 0.95rem;
+}
+
+#post-search[type="search"] {
+  font-size: 1rem;
+  opacity: 0.54;
+}
+
+#button-search {
+  display: flex;
+  position: relative;
+  width: 2.4rem;
+  background-color: #b59f5b;
+}
+
+#button-search:hover {
+  background-color: #323232;
+}
+
+#button-search::before {
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: auto;
+  background-image: url(../icons/search.svg);
+}
+
+
+
+.posts_sidebar__mailing {
+  margin-bottom: 3.05rem;
+}
+
+.sidebar_mailing__title {
+  margin-bottom: 2rem;
+}
+
+#guest-mail {
+  background-color: #f4f7f6;
+  margin-bottom: 0.85rem;
+  width: 100%;
+}
+
+#guest-mail::placeholder {
+  font-size: 0.65rem;
+  color: black;
+  opacity: 0.54;
+  padding-left: 0.95rem;
+}
+
+#guest-mail[type="email"] {
+  font-size: 1rem;
+  opacity: 0.54;
+}
+
+#guest-mail:focus {
+  outline: 0.05rem solid #b59f5b;
+}
+
+#button-mail {
+  background-color: #b59f5b;
+  width: 100%;
+
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#button-mail:hover {
+  background-color: #323232;
+}
+
+
+
+
+.posts_sidebar__tags {
+  margin-bottom: 3.05rem;
+}
+
+.sidebar_tags__title {
+  margin-bottom: 2.05rem;
+}
+
+.sidebar_tags__box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 0.3rem;
+
+  list-style-type: none;
+  font-size: 0;
+}
+
+.sidebar_box__tag {
+  display: flex;
+  border: .15rem solid #eeeeee;
+  padding: 0.17rem 0.63rem;
+
+  text-align: center;
+  align-content: center;
+  font-size: 0.6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sidebar_box__tag:hover {
+  border: .15rem solid #b59f5b;
+  cursor: pointer;
+}
+
+
+
+.sidebar_categories__title {
+  margin-bottom: 2.1rem;
+}
+
+.sidebar_categories__box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 0;
+
+  font-size: 0;
+  list-style-type: none;
+}
+
+.sidebar_categories__item {
+  display: inline-block;
+  box-sizing: border-box;
+  /* height: 1.4rem; */
+  box-sizing: border-box;
+  height: 1.5rem;
+  /* padding-bottom: 0.65rem; */
+  border-bottom: 0.05rem solid #eeeeee;
+  /* margin-bottom: 0.65rem; */
+
+  font-size: 0.7rem;
+  line-height: 0.67rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.sidebar_categories__item sup {
+  color: #b59f5b;
+  font-size: 0.6rem;
+  /* font-variant-position: super; */
+  /* font-size: 0.7rem; */
+  /* font-weight: bold; */
+  /* text-transform: capitalize; */
+}
+
+
+
+
+
 
 
 .content_main__products {
