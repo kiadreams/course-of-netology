@@ -112,7 +112,6 @@
         </div>
       </div>
     </section>
-
     <section class="content__main">
       <div class="content_main__posts">
         <div class="main_posts__box">
@@ -263,9 +262,6 @@
             </div>
           </article>
         </div>
-
-
-
         <aside class="main_posts__sidebar">
           <section class="posts_sidebar__last-posts">
             <h4 class="sidebar_last-posts__title sidebar-titles">
@@ -284,7 +280,8 @@
                 </header>
               </div>
               <div class="sidebar_last-posts__item">
-                <img class="sidebar_last-post__image" src="images/151.jpg" alt="Девушка на берегу моря занимается йогой">
+                <img class="sidebar_last-post__image" src="images/151.jpg"
+                  alt="Девушка на берегу моря занимается йогой">
                 <header class="sidebar_last-post__headline">
                   <time class="last-post_headline__date" datetime="2019-06-14">
                     14 июня 2019
@@ -329,19 +326,21 @@
               </div>
             </div>
             <div class="sidebar_last-posts__search ">
-              <input class="sidebar-interactive" type="search" name="post-search" id="post-search" placeholder="Найти...">
-              <button class="sidebar-interactive" type="button" id="button-search"></button>
+              <input class="sidebar_last-posts__input interactive-element" type="search" name="post-search"
+                id="post-search" placeholder="Найти...">
+              <button class="sidebar_last-posts__button interactive-element button-hover" type="button"
+                id="button-search"></button>
             </div>
           </section>
-
           <section class="posts_sidebar__mailing">
             <h4 class="sidebar_mailing__title sidebar-titles">рассылка</h4>
             <div class="sidebar_mailing__box">
-              <input class="sidebar-interactive" type="email" name="guest-mail" id="guest-mail" placeholder="Ваш email-адрес">
-              <button class="sidebar-interactive" type="button" id="button-mail">подписаться</button>
+              <input class="sidebar_mailing__input interactive-element" type="email" name="guest-mail" id="guest-mail"
+                placeholder="Ваш email-адрес">
+              <button class="interactive-element button-element button-hover" type="button"
+                id="button-mail">подписаться</button>
             </div>
           </section>
-
           <section class="posts_sidebar__tags">
             <h4 class="sidebar_tags__title sidebar-titles">теги</h4>
             <ul class="sidebar_tags__box">
@@ -355,7 +354,6 @@
               <li><strong class="sidebar_box__tag">health</strong></li>
             </ul>
           </section>
-
           <section class="posts_sidebar__categories">
             <h4 class="sidebar_categories__title sidebar-titles">темы</h4>
             <ul class="sidebar_categories__box">
@@ -381,7 +379,6 @@
           </section>
         </aside>
       </div>
-
       <div class="content_main__products">
         <h2 class="main_products__title content-titles">наши изделия</h2>
         <div class="main_products__box">
@@ -403,7 +400,8 @@
                     <strong>800 <span class="currency-ruble">Р</span></strong>
                   </div>
                 </div>
-                <a class="product_price-box__button" href="#0">в магазин</a>
+                <a class="product_price-box__button interactive-element button-element button-hover" href="#0">в
+                  магазин</a>
               </div>
             </div>
           </div>
@@ -427,7 +425,8 @@
                     <strong>3500<span class="currency-ruble">Р</span></strong>
                   </div>
                 </div>
-                <a class="product_price-box__button" href="#0">в магазин</a>
+                <a class="product_price-box__button interactive-element button-element button-hover" href="#0">в
+                  магазин</a>
               </div>
             </div>
           </div>
@@ -451,7 +450,8 @@
                     <strong>400 <span class="currency-ruble">Р</span></strong>
                   </div>
                 </div>
-                <a class="product_price-box__button" href="#0">в магазин</a>
+                <a class="product_price-box__button interactive-element button-element button-hover" href="#0">в
+                  магазин</a>
               </div>
             </div>
           </div>
@@ -459,6 +459,46 @@
       </div>
     </section>
   </main>
+
+
+  <section class="forms remove-element">
+    <div class="forms__background"></div>
+
+    <form class="forms__feedback" action="" method="post">
+      <h2 class="feedback__title content-titles">ваш фидбек</h2>
+      <div class="feedback__frequency">
+        <label class="forms__label" for="frequency-selection">
+          Как часто вы заходите на&nbsp;сайт?
+        </label>
+        <select class="feedback_frequency__select interactive-element" name="frequency" id="frequency-selection">
+          <option value="value-1" selected>почти каждый день</option>
+          <option value="value-2">раз в несколько дней</option>
+          <option value="value-3">раз в несколько недель</option>
+          <option value="value-4">несколько раз в год</option>
+        </select>
+      </div>
+      <div class="feedback__subscription">
+        <label class="forms__label" for="about-subscription">
+          Вы подписаны на&nbsp;e-mail рассылку?
+        </label>
+        <select class="feedback_subscription__select" name="subscription" id="about-subscription"></select>
+      </div>
+      <div class="feedback__area">
+        <label class="forms__label" for="text-area">
+          Расскажите, какой контент вы хотели бы видеть на&nbsp;нашем сайте?
+        </label>
+        <input class="feedback_area__text" type="text" name="" id="text-area" placeholder="Может, больше рецептов?">
+      </div>
+
+
+
+
+
+      <button class="interactive-element button-element button-hover " type="button"
+        id="feedback-button">отправить</button>
+    </form>
+  </section>
+
 
   <footer class="info">
     <address class="info__contacts">
@@ -474,6 +514,8 @@
       Copyright &copy; 2009–2019 City Blog LLC.
     </small>
   </footer>
+
+  <script src="js/feedback.js"></script>
 </body>
 
 </html>
