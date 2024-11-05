@@ -466,8 +466,9 @@
 
     <form class="forms__feedback" action="" method="post">
       <h2 class="feedback__title content-titles">ваш фидбек</h2>
+
       <div class="feedback__frequency">
-        <label class="forms__label" for="frequency-selection">
+        <label class="feedback_frequency__label forms__label" for="frequency-selection">
           Как часто вы заходите на&nbsp;сайт?
         </label>
         <select class="feedback_frequency__select interactive-element" name="frequency" id="frequency-selection">
@@ -478,10 +479,17 @@
         </select>
       </div>
       <div class="feedback__subscription">
-        <label class="forms__label" for="about-subscription">
-          Вы подписаны на&nbsp;e-mail рассылку?
-        </label>
-        <select class="feedback_subscription__select" name="subscription" id="about-subscription"></select>
+        <p class="feedback_subscription__text">Вы подписаны на&nbsp;e-mail рассылку?</p>
+        <div class="feedback_subscription_box-button">
+          <label class="feedback_subscription__label-left forms__label">
+            <input type="radio" name="subscription" id="subscription-left" checked>
+            Да
+          </label>
+          <label class="feedback_subscription__label-right forms__label">
+            <input type="radio" name="subscription" id="subscription-right">
+            Hет
+          </label>
+        </div>
       </div>
       <div class="feedback__area">
         <label class="forms__label" for="text-area">
