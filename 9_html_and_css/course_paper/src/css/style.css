@@ -135,7 +135,8 @@ body {
 
 .content-titles {
   margin: 0;
-  margin-bottom: 2.05rem;
+  /* margin-bottom: 2.05rem; */
+  margin-bottom: 2.25rem;
 
   text-align: center;
 
@@ -151,8 +152,7 @@ body {
   background-color: #e1d9bd;
   height: 0.15rem;
   width: 3.3rem;
-  /* bottom: -0.5rem; */
-  bottom: -0.7rem;
+  bottom: -0.85rem;
   left: calc(50% - 3.4rem/2);
 }
 
@@ -784,6 +784,10 @@ body {
   flex-direction: column;
 }
 
+.feedback__frequency {
+  margin-bottom: 1.65rem;
+}
+
 .feedback_subscription_box-button {
   display: flex;
 }
@@ -819,51 +823,48 @@ body {
   background-position: right 0.7rem center;
 
   font-size: 0.65rem;
-  color: #a9a9a9;
-  /* opacity: 0.54; */
+  color: #9a9a9a;
+}
+
+.feedback_subscription__text,
+.feedback_subscription__lebel-text {
+  margin: 0;
+  font-size: 0.65rem;
+  line-height: 0.5rem;
+  margin-bottom: 0.55rem;
 }
 
 
-/* .feedback_frequency__select > option {
-  color: #a9a9a9;
-  opacity: 0.54;
-  
-} */
-/* .option__text {
-  font-size: 0.65rem;
-  color: #000;
-  opacity: 0.54;
-} */
-
-/* .frequency_select__options {
-  font-size: 0.65rem;
-  color: #000;
-  opacity: 0.54;
-} */
-
-/* .feedback_frequency__option[selected] {
-  font-size: 0.65rem;
-  color: #000;
-  /* opacity: 0.54; */
-}
-
-/* .feedback_frequency__select:not(:checked)>option {
-  font-size: 0.65rem;
-  color: #000;
-  opacity: 0.54;
-} */
-
-*/ .feedback_subscription__label-left::before {
+.feedback_subscription__lebel-text::before {
   content: "";
-  /* display: inline-block; */
+  display: inline-block;
+
   width: 1rem;
   height: 1rem;
-  z-index: 5;
+  vertical-align: middle;
+
   background-image: url(../icons/form-empty-circle.svg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
+
+.feedback__radio:checked + .feedback_subscription__lebel-text::before {
+background-image: url(../icons/form-circle.svg);
+}
+
+/* .feedback_subscription__label-right::before {
+  content: "";
+  display: inline-block;
+
+  width: 1rem;
+  height: 1rem;
+
+  background-image: url(../icons/form-empty-circle.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+} */
 
 
 
