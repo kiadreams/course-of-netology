@@ -1,7 +1,9 @@
 'use strict'
 
 const onFeedbackForm = document.getElementById('button-mail');
-const offFeedbackForm = document.getElementById('feedback-button');
+const offFeedbackForm = document.querySelector(
+    '.forms_feedback__button-close'
+);
 
 onFeedbackForm.addEventListener('click', () => {
     console.log('открыли');
