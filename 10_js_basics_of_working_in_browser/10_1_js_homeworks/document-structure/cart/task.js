@@ -3,6 +3,9 @@
 const products = document.querySelector('.products');
 const cartProducts = document.querySelector('.cart__products');
 
+// getCoords(cartProducts, products.querySelector('.product__image'));
+
+
 
 products.addEventListener('click', (e) => {
   const product = e.target.closest('.product');
@@ -18,7 +21,7 @@ products.addEventListener('click', (e) => {
 function changeQuantityProduct(quantityControl, quantityValue) {
   const value = Number(quantityValue.innerText);
   if (quantityControl.classList.contains('product__quantity-control_inc')) {
-    quantityValue.innerText =  value + 1;
+    quantityValue.innerText = value + 1;
   } else {
     quantityValue.innerText = value === 1 ? value : value - 1;
   }
@@ -28,12 +31,15 @@ function changeQuantityProduct(quantityControl, quantityValue) {
 function addProductToCart(product, productQuantity) {
   const quantityValue = Number(productQuantity.innerText);
   let cartProduct = searchCartProduct(product.dataset.id)
-  if(!cartProduct) {
+  if (!cartProduct) {
     const productImage = product.querySelector('img').src;
     cartProduct = createCartProduct(product.dataset.id, productImage, quantityValue);
+
+    insertCartProduct(cartProduct);
+
     cartProducts.insertAdjacentElement('beforeend', cartProduct);
   } else {
-    
+
     incrQuantityCartProduct(cartProduct, quantityValue);
   }
 }
@@ -43,7 +49,7 @@ function createCartProduct(productId, srcImage, quantityValue) {
   const cartProduct = document.createElement('div');
   cartProduct.dataset.id = productId;
   cartProduct.classList.add('cart__product');
-  
+
   const cartImage = document.createElement('img');
   cartImage.src = srcImage;
   cartImage.classList.add('cart__product-image');
@@ -55,7 +61,7 @@ function createCartProduct(productId, srcImage, quantityValue) {
 
   cartProduct.insertAdjacentElement('afterbegin', cartProductCount);
   cartProduct.insertAdjacentElement('afterbegin', cartImage);
-  
+
   return cartProduct;
 }
 
@@ -83,4 +89,78 @@ function clickCartProduct(event) {
   } else {
     cartProduct.remove();
   }
+}
+
+// создаем анимацию...
+
+function insertCartProduct(cartProduct) {
+  const cartCoords = cartProducts.getBoundingClientRect();
+  const imgCoords = cartProduct.querySelector('img').getBoundingClientRect();
+  const cloneImage = cartProduct.querySelector('img').cloneNode();
+  const [cartTop, cartLeft, stepTop, stepLeft] = getShadowCoords(cartProduct, imgCoords, cartCoords);
+  // const stepTop = (cartCoords.top - prodCoords.top) / 10;
+  // const stepLeft = (cartCoords.left - prodCoords.left) / 10;
+  cloneImage.classList.add('product-shadow');
+  cloneImage.style.display = 'none';
+  document.body.insertAdjacentElement('afterbegin', cloneImage);
+
+  cloneImage.style.left = '500px';
+  cloneImage.style.top = '100px';
+
+  console.log(cloneImage);
+  console.log(imgCoords);
+  // if (!cartProducts.firstElementChild) {
+  //   console.log('элементов нет');
+  //   const coords = getCoordsFirstProduct();
+  // } else {
+  //   console.log('есть эелементы');
+  //   const coords = getCoordsNextProduct();
+  // }
+}
+
+
+function getShadowCoords(product, imgCoords, cartCoords) {
+  const left = (cartCoords.width - imgCoords.width) / 2;
+  const top = cartCoords.top;
+  const stepTop = (top - imgCoords.top) / 10;
+  const stepLeft = (left - imgCoords.left) / 10;
+  if (!cartProducts.firstElementChild) {
+    return [top, left, stepTop, stepLeft];
+  } else if (false) {
+    return [0, 0, 0, 0];
+  }
+    return [0, 0, 0, 0];
+}
+
+function showShadow(prodImg) {
+  setTimeout((prodImg) => {
+    prodImg.style.display = 'block';
+  }, 50);
+}
+
+function stepShadow(prodImg) {
+  setTimeout((prodImg) => {
+    prodImg.style.display = 'none';
+    prodImg.style.left
+  }, 50);
+}
+
+function getCoords(product, cart) {
+  console.log(product.getBoundingClientRect());
+  console.log(cart.getBoundingClientRect());
+  // const coords = element.getBoundingClientRect();
+  // const topCoord = coords.top;
+  // const leftCoord = 
+  // const [top, left] = element.getBoundingClientRect()
+}
+
+
+
+function getCoords(product, cart) {
+  console.log(product.getBoundingClientRect());
+  console.log(cart.getBoundingClientRect());
+  // const coords = element.getBoundingClientRect();
+  // const topCoord = coords.top;
+  // const leftCoord = 
+  // const [top, left] = element.getBoundingClientRect()
 }
