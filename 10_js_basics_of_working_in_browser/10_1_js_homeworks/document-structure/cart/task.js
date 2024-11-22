@@ -1,62 +1,65 @@
 'use strict'
 
+
 const products = document.querySelector('.products');
 const cartProducts = document.querySelector('.cart__products');
 
-// getCoords(cartProducts, products.querySelector('.product__image'));
+const stepShadowCount = 5;
+const stepTime = 2;
 
+let cartObject = {};
 
+let stepCount = 0;
+let targetProduct = null;
+let cartProduct = null;
+let cloneProductImage = null;
+
+loadCart();
 
 products.addEventListener('click', (e) => {
-  const product = e.target.closest('.product');
-  const productQuantity = product.querySelector('.product__quantity-value');
+  targetProduct = e.target.closest('.product');
   if (e.target.classList.contains('product__quantity-control')) {
-    changeQuantityProduct(e.target, productQuantity);
+    changeQuantityProduct(e.target);
   } else if (e.target.classList.contains('product__add')) {
-    addProductToCart(product, productQuantity);
+    addProductsToCart();
   }
 });
 
 
-function changeQuantityProduct(quantityControl, quantityValue) {
-  const value = Number(quantityValue.innerText);
+function changeQuantityProduct(quantityControl) {
+  const productQuantity = targetProduct.querySelector('.product__quantity-value');
+  const value = Number(productQuantity.innerText);
   if (quantityControl.classList.contains('product__quantity-control_inc')) {
-    quantityValue.innerText = value + 1;
+    productQuantity.innerText = value + 1;
   } else {
-    quantityValue.innerText = value === 1 ? value : value - 1;
+    productQuantity.innerText = value === 1 ? value : value - 1;
   }
 }
 
 
-function addProductToCart(product, productQuantity) {
-  const quantityValue = Number(productQuantity.innerText);
-  let cartProduct = searchCartProduct(product.dataset.id)
+function addProductsToCart() {
+  const productList = cartProducts.querySelectorAll('.cart__product');
+  cartProduct = searchCartProduct(productList, targetProduct.dataset.id)
   if (!cartProduct) {
-    const productImage = product.querySelector('img').src;
-    cartProduct = createCartProduct(product.dataset.id, productImage, quantityValue);
-
-    insertCartProduct(cartProduct);
-
+    cartProduct = createCartProduct();
     cartProducts.insertAdjacentElement('beforeend', cartProduct);
-  } else {
-
-    incrQuantityCartProduct(cartProduct, quantityValue);
+    cartProduct.style.visibility = 'hidden';
   }
+  addNumberOfCartProducts();
 }
 
 
-function createCartProduct(productId, srcImage, quantityValue) {
+function createCartProduct() {
   const cartProduct = document.createElement('div');
-  cartProduct.dataset.id = productId;
+  cartProduct.dataset.id = targetProduct.dataset.id;
   cartProduct.classList.add('cart__product');
 
   const cartImage = document.createElement('img');
-  cartImage.src = srcImage;
+  cartImage.src = targetProduct.querySelector('img').src;
   cartImage.classList.add('cart__product-image');
   cartImage.addEventListener('click', clickCartProduct)
 
   const cartProductCount = document.createElement('div');
-  cartProductCount.innerText = quantityValue;
   cartProductCount.classList.add('cart__product-count');
 
   cartProduct.insertAdjacentElement('afterbegin', cartProductCount);
@@ -66,14 +69,27 @@ function createCartProduct(productId, srcImage, quantityValue) {
 }
 
 
-function incrQuantityCartProduct(cartProduct, quantityValue) {
+function addNumberOfCartProducts() {
+  const productCount = Number(targetProduct.querySelector('.product__quantity-value').innerText);
   const value = Number(cartProduct.lastElementChild.innerText);
-  cartProduct.lastElementChild.innerText = value + quantityValue;
+
+  const cartProductCoords = cartProduct.getBoundingClientRect();
+  const imgProductCoords = targetProduct.querySelector('img').getBoundingClientRect();
+
+  cloneProductImage = targetProduct.querySelector('img').cloneNode();
+  cloneProductImage.classList.add('product-shadow');
+  cloneProductImage.style.top = imgProductCoords.top + window.scrollY + 'px';
+  cloneProductImage.style.left = imgProductCoords.left + 'px';
+  cloneProductImage.style.display = 'none';
+  document.body.insertAdjacentElement('afterbegin', cloneProductImage);
+
+  const [stepTop, stepLeft] = getShadowCoords(imgProductCoords, cartProductCoords);
+  showShadow(stepTop, stepLeft, productCount, value);
 }
 
 
-function searchCartProduct(productId) {
-  for (const product of cartProducts.querySelectorAll('.cart__product')) {
+function searchCartProduct(productList, productId) {
+  for (const product of productList) {
     if (product.dataset.id === productId) {
       return product;
     }
@@ -87,80 +103,69 @@ function clickCartProduct(event) {
   if (cartProductCount > 1) {
     cartProduct.lastElementChild.innerText--;
   } else {
+    saveCart(cartProduct.dataset.id, 0, true);
     cartProduct.remove();
   }
 }
 
-// создаем анимацию...
 
-function insertCartProduct(cartProduct) {
-  const cartCoords = cartProducts.getBoundingClientRect();
-  const imgCoords = cartProduct.querySelector('img').getBoundingClientRect();
-  const cloneImage = cartProduct.querySelector('img').cloneNode();
-  const [cartTop, cartLeft, stepTop, stepLeft] = getShadowCoords(cartProduct, imgCoords, cartCoords);
-  // const stepTop = (cartCoords.top - prodCoords.top) / 10;
-  // const stepLeft = (cartCoords.left - prodCoords.left) / 10;
-  cloneImage.classList.add('product-shadow');
-  cloneImage.style.display = 'none';
-  document.body.insertAdjacentElement('afterbegin', cloneImage);
+// реализация анимации...
+function getShadowCoords(imgProductCoords, cartProductCoords) {
+  
+  const stepLeft = Math.abs(cartProductCoords.left - imgProductCoords.left) / stepShadowCount;
+  const stepTop = Math.abs(imgProductCoords.top - cartProductCoords.top) / stepShadowCount;
 
-  cloneImage.style.left = '500px';
-  cloneImage.style.top = '100px';
-
-  console.log(cloneImage);
-  console.log(imgCoords);
-  // if (!cartProducts.firstElementChild) {
-  //   console.log('элементов нет');
-  //   const coords = getCoordsFirstProduct();
-  // } else {
-  //   console.log('есть эелементы');
-  //   const coords = getCoordsNextProduct();
-  // }
+  console.log(stepTop, stepLeft);
+  console.log(window.scrollY);
+  return [stepTop, stepLeft];
 }
 
 
-function getShadowCoords(product, imgCoords, cartCoords) {
-  const left = (cartCoords.width - imgCoords.width) / 2;
-  const top = cartCoords.top;
-  const stepTop = (top - imgCoords.top) / 10;
-  const stepLeft = (left - imgCoords.left) / 10;
-  if (!cartProducts.firstElementChild) {
-    return [top, left, stepTop, stepLeft];
-  } else if (false) {
-    return [0, 0, 0, 0];
+function showShadow(stepTop, stepLeft, productCount, value) {
+  setTimeout(() => {
+    if (stepCount < stepShadowCount) {
+      cloneProductImage.style.top = parseInt(cloneProductImage.style.top) - stepTop + 'px';
+      cloneProductImage.style.left = parseInt(cloneProductImage.style.left) + stepLeft + 'px';
+      cloneProductImage.style.display = 'block';
+
+      setTimeout(() => {
+        cloneProductImage.style.display = 'none';
+        cloneProductImage.style.top += stepTop + 'px';
+        cloneProductImage.style.left += stepLeft + 'px';
+        stepCount++;
+        showShadow(stepTop, stepLeft, productCount, value);
+      }, stepTime);
+
+    } else {
+      cloneProductImage.remove();
+      cartProduct.lastElementChild.innerText = value + productCount;
+      cartProduct.style.visibility = 'visible';
+      saveCart(cartProduct.dataset.id, value + productCount, false);
+      stepCount = 0;
+    }
+  }, stepTime);
+}
+
+
+// реализация сохранения корзины продуктов
+function saveCart(id, value, isRemove) {
+  if (isRemove) {
+    delete cartObject[id];
+  } else {
+    cartObject[id] = value;
   }
-    return [0, 0, 0, 0];
-}
-
-function showShadow(prodImg) {
-  setTimeout((prodImg) => {
-    prodImg.style.display = 'block';
-  }, 50);
-}
-
-function stepShadow(prodImg) {
-  setTimeout((prodImg) => {
-    prodImg.style.display = 'none';
-    prodImg.style.left
-  }, 50);
-}
-
-function getCoords(product, cart) {
-  console.log(product.getBoundingClientRect());
-  console.log(cart.getBoundingClientRect());
-  // const coords = element.getBoundingClientRect();
-  // const topCoord = coords.top;
-  // const leftCoord = 
-  // const [top, left] = element.getBoundingClientRect()
+  localStorage.cart = JSON.stringify(cartObject);
 }
 
 
-
-function getCoords(product, cart) {
-  console.log(product.getBoundingClientRect());
-  console.log(cart.getBoundingClientRect());
-  // const coords = element.getBoundingClientRect();
-  // const topCoord = coords.top;
-  // const leftCoord = 
-  // const [top, left] = element.getBoundingClientRect()
+function loadCart() {
+  cartObject = JSON.parse(localStorage.cart);
+  const productList = document.querySelectorAll('.product');
+  for (const id of Object.keys(cartObject)) {
+    targetProduct = searchCartProduct(productList, id);
+    console.log(targetProduct);
+    cartProduct = createCartProduct();
+    cartProducts.insertAdjacentElement('beforeend', cartProduct);
+    cartProduct.lastElementChild.innerText = cartObject[id];
+  }
 }
