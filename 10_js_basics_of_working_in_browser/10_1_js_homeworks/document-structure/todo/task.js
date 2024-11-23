@@ -1,63 +1,67 @@
 const taskForm = document.forms.tasks__form;
 const taskList = document.querySelector('#tasks__list');
 
-console.log(localStorage);
+const taskTitles = loadStorageTasks();
+taskTitles.forEach(title => insertTask(title));
 
-loadStorageTasks();
 
 taskForm.tasks__add.addEventListener('click', (e) => {
   e.preventDefault();
   const taskTitle = taskForm.task__input.value;
   if (!taskTitle) return;
-  if (localStorage.getItem(taskTitle)) {
+  if (taskTitles.includes(taskTitle)) {
     alert('такая задача уже существует!!!');
     taskForm.reset();
     return;
   }
-  localStorage.setItem(taskTitle, localStorage.length);
+  addTitleToTaskTitles(taskTitle);
   insertTask(taskTitle);
   taskForm.reset();
 });
 
 
-function createTask(title) {
-  const task = document.createElement('div');
-  task.insertAdjacentElement('afterbegin', createTaskTitle(title));
-  task.insertAdjacentElement('beforeend', createTaskRemove());
-  task.classList.add('task')
-  return task;
-}
-
-
-function createTaskTitle(title) {
-  const taskTitle = document.createElement('div');
-  taskTitle.textContent = title;
-  taskTitle.classList.add('task__title');
-  return taskTitle;
-}
-
-
-function createTaskRemove() {
-  const taskRemove = document.createElement('a');
-  taskRemove.innerText = '×';
-  taskRemove.classList.add('task__remove');
-
-  taskRemove.addEventListener('click', (e) => {
-    e.preventDefault();
-    const task = e.target.closest('.task')
-    localStorage.removeItem(task.firstElementChild.innerText);
+taskList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('task__remove')) {
+    const task = e.target.closest('.task');
+    const title = task.querySelector('.task__title').textContent
+    removeTitleFromTaskTitles(title);
     task.remove();
-  });
+  }
+});
 
-  return taskRemove;
+
+function insertTask(title) {
+  taskList.insertAdjacentHTML('beforeend', `
+    <div class="task">
+      <div class="task__title">${title}</div>
+      <a href="#" class="task__remove">&times;</a>
+    </div>
+    `);
+}
+
+
+function removeTitleFromTaskTitles(title) {
+  const index = taskTitles.indexOf(title);
+  if (index !== -1) {
+    taskTitles.splice(index, 1);
+    if (taskTitles.length) {
+      localStorage.taskTitles = JSON.stringify(taskTitles);
+    } else {
+      localStorage.clear();
+    }
+  }
+}
+
+
+function addTitleToTaskTitles(title) {
+  taskTitles.push(title);
+  localStorage.taskTitles = JSON.stringify(taskTitles);
 }
 
 
 function loadStorageTasks() {
-  Object.keys(localStorage).forEach(taskTitle => insertTask(taskTitle));
-}
-
-function insertTask(title) {
-  const task = createTask(title);
-  taskList.insertAdjacentElement('beforeend', task);
+  if (localStorage.length) {
+    return JSON.parse(localStorage.taskTitles);
+  }
+  return [];
 }
