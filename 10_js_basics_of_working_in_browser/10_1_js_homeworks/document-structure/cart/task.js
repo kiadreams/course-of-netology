@@ -90,21 +90,13 @@ function addCartProductObject(id, imgSrcLink, count) {
 
 
 function changeCartProductObject(id, value) {
-  cartProductObjects.find((product) => {
-    if (product.id === id) {
-      product.count += value;
-      return;
-    }
-  });
+  const cartProductObject = cartProductObjects.find(product => product.id === id);
+  cartProductObject.count += value;
 }
 
 
 function removeCartProductObject(id) {
-  const productIndex = cartProductObjects.findIndex((product) => {
-    if (product.id === id) {
-      return true;
-    }
-  });
+  const productIndex = cartProductObjects.findIndex(product => product.id === id);
   cartProductObjects.splice(productIndex, 1);
 }
 
@@ -129,11 +121,7 @@ function addNumberOfCartProducts(productId, imgSrcLink, productCount) {
 
 function findCartProduct(productId) {
   const cartProductList = Array.from(cartProducts.querySelectorAll('.cart__product'));
-  return cartProductList.find((product) => {
-    if (product.dataset.id === productId) {
-      return true;
-    }
-  });
+  return cartProductList.find(product => product.dataset.id === productId)
 }
 
 
