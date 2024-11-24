@@ -47,7 +47,7 @@ function removeTitleFromTaskTitles(title) {
     if (taskTitles.length) {
       localStorage.taskTitles = JSON.stringify(taskTitles);
     } else {
-      localStorage.clear();
+      localStorage.removeItem('taskTitles');
     }
   }
 }
@@ -60,7 +60,7 @@ function addTitleToTaskTitles(title) {
 
 
 function loadStorageTasks() {
-  if (localStorage.length) {
+  if (localStorage.getItem('taskTitles')) {
     return JSON.parse(localStorage.taskTitles);
   }
   return [];

@@ -10,6 +10,7 @@ body {
 .cart__product {
   position: relative;
 }
+
 .cart__product-count {
   position: absolute;
   top: 0;
