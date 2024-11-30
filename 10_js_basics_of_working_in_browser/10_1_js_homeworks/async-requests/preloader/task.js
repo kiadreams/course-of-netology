@@ -5,7 +5,7 @@ const currencyItems = document.querySelector('#items');
 
 loadCacheData();
 
-xhr.open('get', 'https://students.netoservices.ru/nestjs-backend/slow-get-courses');
+xhr.open('GET', 'https://students.netoservices.ru/nestjs-backend/slow-get-courses');
 xhr.send();
 xhr.onload = () => {
   if (xhr.status === 200) {
@@ -13,6 +13,7 @@ xhr.onload = () => {
     const currencies = Object.values(dataResponse.response.Valute);
     localStorage.setItem('currencies', JSON.stringify(currencies));
     showCurrencies(currencies);
+    loaderIcon.classList.remove('loader_active');
   }
 }
 
@@ -26,7 +27,6 @@ function loadCacheData() {
 
 
 function showCurrencies(currencies) {
-  loaderIcon.classList.remove('loader_active');
   deleteOldItems();
   currencies.forEach(currency => {
     currencyItems.insertAdjacentHTML('beforebegin', createCurrencyElement(currency));
